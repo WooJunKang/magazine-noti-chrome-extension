@@ -148,13 +148,16 @@ addEventListener('DOMContentLoaded', event => {
 function clickingEvent() {
   document.querySelectorAll('.content').forEach(article => {
     article.addEventListener('click', event => {
+
       let _element = clickEvent.getClickedElement(event.target);
       let _title = _element.parentElement.getAttribute('value');
       let _history = storage.getClickedArticles();
+      chrome.tabs.create({ url: _element.href });
       if (storage.isNewArticle(_title, _history)) {
         console.log('It is new article !!')
         storage.addClickedArticle(_title, _history);
         tag.removeNewTag(_element);
+
       }
     })
   })
