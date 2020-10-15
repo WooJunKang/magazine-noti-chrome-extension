@@ -12,7 +12,7 @@ function updateBadge() {
     }
   }
 
-  console.log('current new article number: ', cntNewArticle);
+  // console.log('current new article number: ', cntNewArticle);
 
   chrome.browserAction.setBadgeBackgroundColor({ color: '#7d3ffb' });
   chrome.browserAction.setBadgeText({ text: `${cntNewArticle === 0 ? '' : cntNewArticle}` });
@@ -24,7 +24,6 @@ window.setInterval(updateBadge, 1000);
 renderArticles()
 window.setInterval(renderArticles, 300000);
 
-fetch('http://localhost:3001/input');
 
 function renderArticles() {
   fetch('http://localhost:3001/contents')
@@ -34,6 +33,7 @@ function renderArticles() {
       data.forEach(element => {
         _array.push(element._id)
       });
+      console.log(_array)
       if (_array.length > 0) {
         localStorage.setItem('rendered_articles', _array)
       }

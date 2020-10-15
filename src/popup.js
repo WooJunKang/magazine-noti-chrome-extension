@@ -69,7 +69,9 @@ const storage = {
     for (let article of _articles) {
       _array.push(article.getAttribute('value'));
     }
-    localStorage.setItem('rendered_articles', _array);
+    if (_array.length > 0) {
+      localStorage.setItem('rendered_articles', _array);
+    }
   },
 
   isNewArticle: function (title, history) {
