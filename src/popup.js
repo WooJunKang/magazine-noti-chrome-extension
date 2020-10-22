@@ -3,6 +3,8 @@ const ulEle = document.querySelector('#contents-container');
 // const articles = document.querySelectorAll('.content');
 const allReadEle = document.querySelector('#all-read');
 
+const URL = 'https://noti-app-chrome-extension.herokuapp.com/contents'
+
 const tag = {
 
   removeNewTag: function (element) { // li tag
@@ -133,7 +135,7 @@ const content = {
 
 
 addEventListener('DOMContentLoaded', event => {
-  fetch('http://localhost:3001/contents')
+  fetch(URL)
     .then(res => res.json())
     .then(data => data.forEach(obj => {
       content.renderContent(obj);

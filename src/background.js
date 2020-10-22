@@ -1,5 +1,5 @@
 
-
+const URL = 'https://noti-app-chrome-extension.herokuapp.com/contents'
 
 function updateBadge() {
   let renderedArticles = localStorage.getItem('rendered_articles') === null ? [] : localStorage.getItem('rendered_articles').split(',');
@@ -26,7 +26,7 @@ window.setInterval(renderArticles, 300000);
 
 
 function renderArticles() {
-  fetch('http://localhost:3001/contents')
+  fetch(URL)
     .then(res => res.json())
     .then(data => {
       let _array = [];
