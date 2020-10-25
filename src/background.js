@@ -1,5 +1,5 @@
 
-const URL = 'https://noti-app-chrome-extension.herokuapp.com/contents'
+const URL = 'https://magazine-notification-app.herokuapp.com/contents'
 
 function updateBadge() {
   let renderedArticles = localStorage.getItem('rendered_articles') === null ? [] : localStorage.getItem('rendered_articles').split(',');

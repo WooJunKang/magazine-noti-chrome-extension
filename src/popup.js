@@ -3,7 +3,7 @@ const ulEle = document.querySelector('#contents-container');
 // const articles = document.querySelectorAll('.content');
 const allReadEle = document.querySelector('#all-read');
 
-const URL = 'https://noti-app-chrome-extension.herokuapp.com/contents'
+const URL = 'https://magazine-notification-app.herokuapp.com/contents'
 
 const tag = {
 
